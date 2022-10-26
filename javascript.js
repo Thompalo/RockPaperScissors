@@ -9,16 +9,30 @@ function getComputerChoice() {
 
 // Play five rounds
 function game() {
-    for (let i = 0; i <= 5; i++) {
-        let playerScore = 0;
-        let computerScore = 0;
-        console.log(playOneRound(playerSelection, computerSelection));
+    for (let i = 1; i <= 5; i++) {
+    //    console.log(playOneRound(playerSelection, computerSelection));
+        let round = playOneRound(playerSelection, computerSelection);
+            console.log(round);
+            if (round.includes("win")) {
+            playerScore++;
+            } else if (round.includes("loose")) {
+            computerScore++;
+            }
+            console.log("Player score: " + playerScore + " and Computer score: " + computerScore);
+        }
+    if (playerScore > computerScore) {
+        console.log("You won this game!")
+    } else if (playerScore < computerScore) {
+        console.log("You lost this game!")
+    } else {
+        console.log("It's a tie. Refresh page to try again.")
     }
 }
 
 // Play a single round
 function playOneRound(playerSelection, computerSelection) {
     playerSelection = prompt("Choose your hand: rock, paper or scissors.").toLowerCase();
+    computerSelection = getComputerChoice();
     if (playerSelection == "rock" && computerSelection == "scissors") {
         return "You win... Rock beats scissors.";
     } else if
@@ -46,9 +60,9 @@ function playOneRound(playerSelection, computerSelection) {
 
 // Define initial variables and initial value
 let playerSelection = "rock";
-const computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
+let playerScore = 0;
+let computerScore = 0;
 
 // Start the game
 game();
-
-
