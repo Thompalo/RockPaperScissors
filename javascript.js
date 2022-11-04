@@ -8,7 +8,7 @@ function getComputerChoice() {
 }
 
 // Play five rounds
-function game() {
+/*function game() {
     for (let i = 1; i <= 5; i++) {
     //    console.log(playOneRound(playerSelection, computerSelection));
         let round = playOneRound(playerSelection, computerSelection);
@@ -28,6 +28,7 @@ function game() {
         console.log("It's a tie. Refresh page to try again.")
     }
 }
+*/
 
 // Play a single round
 function playOneRound(playerSelection, computerSelection) {
